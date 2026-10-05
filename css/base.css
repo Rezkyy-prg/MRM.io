@@ -1,0 +1,201 @@
+/* =========================================================
+   BASE.CSS
+   Global styles, variables, reset, typography
+   ========================================================= */
+
+
+/* =========================================================
+   1. CSS VARIABLES
+   ========================================================= */
+:root {
+    /* Colors */
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --surface-soft: #eeeeeb;
+    --text: #171717;
+    --text-muted: #686868;
+    --line: #ddddda;
+    --accent: #171717;
+    --inverse: #ffffff;
+
+    /* Layout */
+    --max-width: 1160px;
+
+    /* Border Radius */
+    --radius: 18px;
+
+    /* Animation */
+    --transition: 220ms ease;
+}
+
+/* =========================================================
+   2. DARK MODE VARIABLES
+   ========================================================= */
+[data-theme="dark"] {
+    --bg: #111111;
+    --surface: #181818;
+    --surface-soft: #202020;
+    --text: #f5f5f3;
+    --text-muted: #a7a7a2;
+    --line: #30302e;
+    --accent: #f5f5f3;
+    --inverse: #111111;
+}
+
+/* =========================================================
+   3. RESET
+   ========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================================
+   4. HTML
+   ========================================================= */
+html {
+    scroll-behavior: smooth;
+
+    /*
+     * Memberikan jarak ketika navigasi
+     * menuju section tertentu.
+     */
+    scroll-padding-top: 90px;
+}
+
+/* =========================================================
+   5. BODY
+   ========================================================= */
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+/*
+ * Ketika mobile menu terbuka,
+ * halaman tidak bisa di-scroll.
+ */
+
+body.menu-open {
+    overflow: hidden;
+}
+
+/* =========================================================
+   6. LINKS
+   ========================================================= */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*
+ * Menghilangkan highlight bawaan
+ * pada perangkat touchscreen.
+ */
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   7. BUTTON
+   ========================================================= */
+button {
+    font: inherit;
+}
+
+/* =========================================================
+   8. IMAGES
+   ========================================================= */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================================================
+   9. TEXT SELECTION
+   ========================================================= */
+::selection {
+    background: var(--text);
+    color: var(--bg);
+}
+
+/* =========================================================
+   10. CONTAINER
+   ========================================================= */
+.container {
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+    margin-inline: auto;
+}
+
+/* =========================================================
+   11. SECTION
+   ========================================================= */
+.section {
+    padding: 120px 0;
+}
+
+/*
+ * Section dengan background berbeda.
+ */
+
+.section-muted {
+    background: var(--surface-soft);
+}
+
+/* =========================================================
+   12. EYEBROW TEXT
+   ========================================================= */
+.eyebrow {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+/* =========================================================
+   13. HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    line-height: 1.05;
+}
+
+
+/* =========================================================
+   14. H2
+   ========================================================= */
+
+h2 {
+    font-size: clamp(
+        2.2rem,
+        5vw,
+        4.4rem
+    );
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   15. PARAGRAPH
+   ========================================================= */
+
+p {
+    color: var(--text-muted);
+}

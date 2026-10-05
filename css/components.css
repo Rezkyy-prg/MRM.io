@@ -1,0 +1,757 @@
+/* =========================================================
+   COMPONENTS.CSS
+   Reusable UI components
+   ========================================================= */
+
+
+/* =========================================================
+   1. BUTTON
+   ========================================================= */
+
+.button {
+    min-height: 48px;
+
+    padding: 0 19px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 1px solid var(--text);
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition);
+}
+
+
+/*
+ * Hover effect
+ */
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Primary button */
+
+.button-primary {
+    background: var(--text);
+    color: var(--bg);
+}
+
+
+/* Secondary button */
+
+.button-secondary {
+    border-color: var(--line);
+}
+
+
+.button-secondary:hover {
+    background: var(--surface);
+}
+
+
+/* Light button */
+
+.button-light {
+    background: #ffffff;
+    color: #111111;
+
+    border-color: #ffffff;
+}
+
+
+/* =========================================================
+   2. TEXT LINK
+   ========================================================= */
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+.text-link span {
+    transition: transform var(--transition);
+}
+
+
+.text-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   3. PROJECT GRID
+   ========================================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+/* =========================================================
+   4. PROJECT CARD
+   ========================================================= */
+/* =========================================================
+   HERO PROFILE PHOTO
+   ========================================================= */
+.hero-card-photo {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    min-height: 390px;
+    background: var(--surface);
+}
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+.hero-profile-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+/* =========================================================
+   PHOTO GRADIENT
+   ========================================================= */
+.hero-photo-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 40%,
+            rgba(0, 0, 0, 0.05) 52%,
+            rgba(0, 0, 0, 0.45) 72%,
+            rgba(0, 0, 0, 0.9) 100%
+        );
+}
+/* =========================================================
+   HERO CARD TOP
+   ========================================================= */
+.hero-card-photo .hero-card-top {
+    position: relative;
+    z-index: 2;
+    padding: 28px;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO CARD CONTENT
+   ========================================================= */
+
+.hero-card-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    padding: 28px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.hero-card-photo .hero-card-content p {
+    color: #ffffff;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 1.25rem;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   BOTTOM TECHNOLOGY LABELS
+   ========================================================= */
+
+.hero-card-photo .hero-card-bottom {
+    margin-top: 30px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================================
+   5. PROJECT NUMBER
+   ========================================================= */
+
+.project-number {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 2;
+
+    color: var(--inverse);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    /*
+     * Membuat angka tetap terlihat
+     * pada background project.
+     */
+    mix-blend-mode: difference;
+}
+/* =========================================================
+   6. PROJECT IMAGE
+   ========================================================= */
+
+.project-visual img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 400ms ease;
+}
+
+
+/* =========================================================
+   7. PROJECT IMAGE HOVER
+   ========================================================= */
+
+.project-card:hover .project-visual img {
+    transform: scale(1.04);
+}
+
+/* =========================================================
+   8. PROJECT VISUAL
+   ========================================================= */
+
+.project-visual {
+    min-height: 245px;
+
+    display: grid;
+    place-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/*
+ * Decorative geometric shapes
+ */
+
+.project-visual::before,
+.project-visual::after {
+    content: "";
+
+    position: absolute;
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.35
+    );
+
+    transform: rotate(45deg);
+}
+
+
+/* Large shape */
+
+.project-visual::before {
+    width: 130px;
+    height: 130px;
+}
+
+
+/* Small shape */
+
+.project-visual::after {
+    width: 210px;
+    height: 210px;
+}
+
+
+/* Project visual title */
+
+.project-visual span {
+    position: relative;
+
+    z-index: 1;
+
+    color: #ffffff;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   9. PROJECT VISUAL VARIATIONS
+   ========================================================= */
+
+.project-visual-one {
+    background: #242424;
+}
+
+
+.project-visual-two {
+    background: #575757;
+}
+
+
+.project-visual-three {
+    background: #3a3a3a;
+}
+
+
+/* =========================================================
+   10. PROJECT BODY
+   ========================================================= */
+
+.project-body {
+    padding: 25px;
+}
+
+
+/* =========================================================
+   11. PROJECT META
+   ========================================================= */
+
+.project-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--text-muted);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   12. PROJECT TITLE
+   ========================================================= */
+
+.project-body h3 {
+    margin-top: 18px;
+
+    font-size: 1.45rem;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   13. PROJECT DESCRIPTION
+   ========================================================= */
+
+.project-body p {
+    margin-top: 10px;
+
+    font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   14. TAG LIST
+   ========================================================= */
+
+.tag-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+
+/* Individual tag */
+
+.tag-list span {
+    padding: 7px 11px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 999px;
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   15. TIMELINE
+   ========================================================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 900px;
+
+    margin-left: auto;
+}
+
+
+/*
+ * Vertical timeline line
+ */
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    bottom: 0;
+
+    left: 210px;
+
+    width: 1px;
+
+    background: var(--line);
+}
+
+
+/* =========================================================
+   16. TIMELINE ITEM
+   ========================================================= */
+
+.timeline-item {
+    display: grid;
+
+    grid-template-columns:
+        180px
+        30px
+        1fr;
+
+    gap: 0;
+
+    min-height: 190px;
+}
+
+
+/* =========================================================
+   17. TIMELINE DATE
+   ========================================================= */
+
+.timeline-date {
+    padding-top: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   18. TIMELINE MARKER
+   ========================================================= */
+
+.timeline-marker {
+    width: 9px;
+    height: 9px;
+
+    margin: 5px auto 0;
+
+    border: 2px solid var(--text);
+
+    border-radius: 50%;
+
+    background: var(--surface-soft);
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   19. TIMELINE CONTENT
+   ========================================================= */
+
+.timeline-content {
+    padding-left: 35px;
+}
+
+
+/* Timeline category */
+
+.timeline-type {
+    color: var(--text-muted);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* Timeline title */
+
+.timeline-content h3 {
+    margin: 12px 0 10px;
+
+    font-size: 1.6rem;
+}
+
+
+/* Timeline description */
+
+.timeline-content p:last-child {
+    max-width: 560px;
+}
+
+
+/* =========================================================
+   20. ACHIEVEMENT GRID
+   ========================================================= */
+
+.achievement-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   21. ACHIEVEMENT CARD
+   ========================================================= */
+
+.achievement-card {
+    min-height: 220px;
+
+    padding: 26px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border: 1px solid var(--line);
+
+    border-radius: var(--radius);
+
+    background: var(--surface);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/*
+ * Achievement card hover
+ */
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   22. ACHIEVEMENT NUMBER
+   ========================================================= */
+
+.achievement-icon {
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   23. ACHIEVEMENT YEAR
+   ========================================================= */
+
+.achievement-year {
+    color: var(--text-muted);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   24. ACHIEVEMENT TITLE
+   ========================================================= */
+
+.achievement-card h3 {
+    margin: 10px 0 8px;
+
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   25. ACHIEVEMENT DESCRIPTION
+   ========================================================= */
+
+.achievement-card p:last-child {
+    font-size: 0.84rem;
+}
+
+
+/* =========================================================
+   26. CONTACT SECTION
+   ========================================================= */
+
+.contact-section {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Contact content */
+
+.contact-inner {
+    max-width: 820px;
+
+    text-align: center;
+
+    color: var(--text);
+}
+
+
+/* Contact eyebrow */
+
+.contact-inner .eyebrow {
+    color: var(--text-muted);
+}
+
+
+/* Contact title */
+
+.contact-inner h2 {
+    margin: 16px 0;
+
+    color: var(--text);
+}
+
+
+/* Contact description */
+
+.contact-inner > p:not(.eyebrow) {
+    max-width: 500px;
+
+    margin: 0 auto 30px;
+
+    color: var(--text-muted);
+}
+
+.button-light {
+    background: var(--text);
+    color: var(--bg);
+    border: 1px solid var(--text);
+}
+
+
+
+
+/* =========================================================
+   27. FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: var(--bg);
+
+    color: var(--text);
+}
+
+
+/* Footer container */
+
+.footer-inner {
+    color: var(--text);
+    
+    padding: 28px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* Footer text */
+
+.footer-inner p,
+.footer-links a {
+    color: var(--text-muted);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   28. FOOTER LINKS
+   ========================================================= */
+
+.footer-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+
+/* Footer hover */
+
+.footer-links a:hover {
+    color: #ffffff;
+}

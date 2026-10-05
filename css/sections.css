@@ -1,0 +1,107 @@
+/* =========================================================
+   SECTIONS.CSS
+   Section-specific visual effects and animations
+   ========================================================= */
+
+
+/* =========================================================
+   1. SCROLL PROGRESS
+   ========================================================= */
+
+.scroll-progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 200;
+
+    width: 0;
+    height: 3px;
+
+    background: var(--text);
+}
+
+
+/* =========================================================
+   2. REVEAL ANIMATION
+   ========================================================= */
+
+/*
+ * Kondisi awal elemen sebelum terlihat.
+ *
+ * Elemen sedikit turun dan transparan.
+ */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(22px);
+
+    transition:
+        opacity 700ms ease,
+        transform 700ms ease;
+}
+
+
+/*
+ * Kondisi setelah JavaScript
+ * mendeteksi elemen masuk viewport.
+ */
+
+.reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   3. REVEAL DELAYS
+   ========================================================= */
+
+/*
+ * Delay pertama
+ */
+
+.reveal-delay {
+    transition-delay: 100ms;
+}
+
+
+/*
+ * Delay kedua
+ */
+
+.reveal-delay-2 {
+    transition-delay: 180ms;
+}
+
+
+/* =========================================================
+   4. REDUCED MOTION
+   ========================================================= */
+
+/*
+ * Menghormati pengaturan sistem pengguna
+ * yang memilih mengurangi animasi.
+ *
+ * Ini penting untuk accessibility.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    .reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+}
